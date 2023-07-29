@@ -1,6 +1,6 @@
 syntax = "proto3";
 package graph;
-option go_package = "proto/graph";
+option go_package = "cc/proto/graph";
 /* Top level message that keeps track of all the vertices and edges */
 message Graph {
   repeated Vertice vertices = 1;
