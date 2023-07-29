@@ -1,6 +1,6 @@
 syntax = "proto3";
 package graph;
-option go_package = ".;main";
+option go_package = "github.com/kristiandampedersen/proto/graph/v1/go/";
 /* Top level message that keeps track of all the vertices and edges */
 message Graph {
   repeated Vertice vertices = 1;
