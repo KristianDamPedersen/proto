@@ -1,0 +1,41 @@
+syntax = "proto3";
+package graph;
+option go_package = ".;main";
+/* Top level message that keeps track of all the vertices and edges */
+message Graph {
+  repeated Vertice vertices = 1;
+  repeated Edge edges = 2;
+  repeated Route routes = 3;
+  AdjacencyMatrix adjacencyMatrix = 4;
+}
+
+/* Vertice */
+message Vertice {
+    int32 id = 1;
+    string label = 2;
+    float x = 3;
+    float y = 4;
+}
+
+/* Edge */
+message Edge {
+    Vertice source = 1;
+    Vertice target = 2;
+    float weight = 3;
+}
+
+/* Route */
+message Route {
+    repeated Vertice vertice = 1;
+    repeated float accumulatedWeight = 2;
+}
+
+/* Adjacency Matrix */
+message AdjacencyMatrix {
+    repeated Row row = 1;
+}
+
+/* Row */
+message Row {
+    repeated float weight = 1;
+}
